@@ -120,6 +120,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8012706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1233657081076909810, guid: 357e5bdd08b8c354f83e909091a05906,
+    type: 3}
+  m_PrefabInstance: {fileID: 1531586449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8012708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6154118, y: 2.3640301, z: 0.5}
+  m_Center: {x: 0.00000008940697, y: -0.00000059604645, z: -0.000000067055225}
 --- !u!1001 &549523852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,6 +543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shack
       objectReference: {fileID: 0}
+    - target: {fileID: -1233657081076909810, guid: 357e5bdd08b8c354f83e909091a05906,
+        type: 3}
+      propertyPath: m_TagString
+      value: shackDoor
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 357e5bdd08b8c354f83e909091a05906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -579,7 +603,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: -5716681864270162303, guid: 357e5bdd08b8c354f83e909091a05906,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4651621050845549083, guid: 357e5bdd08b8c354f83e909091a05906, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 357e5bdd08b8c354f83e909091a05906, type: 3}
 --- !u!1 &1612803920 stripped
 GameObject:
@@ -683,6 +713,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2021597931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2042371135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021597937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021597931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2480a41db402345439b32682205620c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpenTime: 3
+  doorOpenSound: {fileID: 8300000, guid: 2baec0710b6dd48248f84c27fc03b004, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: 03b2022bd8648413fb02987a056ded48, type: 3}
 --- !u!1001 &2042371135
 PrefabInstance:
   m_ObjectHideFlags: 0
