@@ -15,6 +15,9 @@ public class PlayerCollisions : MonoBehaviour
     public AudioClip doorCloseSound;
     private new AudioSource audio;
 
+    // Battery sound
+    public AudioClip batteryCollectSound; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,12 +42,33 @@ public class PlayerCollisions : MonoBehaviour
     // Collision detection 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "shackDoor" && !doorIsOpen) 
+        if (hit.gameObject.tag == "shackDoor" && !doorIsOpen && BatteryCollect.charge >= 4) 
         {
             OpenDoor();
+            BatteryCollect.chargeUI.enabled = false;
+           
+        }
+        else if (hit.gameObject.tag == "shackDoor" && !doorIsOpen && BatteryCollect.charge < 4)
+        {
+            BatteryCollect.chargeUI.enabled = true;
+            TextHints.message = "The door seems to need more power...";
+            TextHints.textOn = true;
         }
 
     }
+
+    // Battery collision
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "battery")
+        {
+            BatteryCollect.charge++;
+            audio.PlayOneShot(batteryCollectSound);
+            Destroy(coll.gameObject);
+        }
+        
+    }
+
 
     void OpenDoor()
     {
